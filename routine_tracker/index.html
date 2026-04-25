@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Routine - Notion Style</title>
+    <meta name="description" content="A self-improvement and agency task tracker built like Notion.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="workspace">
+                <div class="workspace-icon">NK</div>
+                <div class="workspace-name">Nehan's Workspace</div>
+                <i class="fa-solid fa-chevron-down" style="margin-left: auto; font-size: 0.75rem; color: var(--text-muted);"></i>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active"><i class="fa-solid fa-calendar-check" style="width: 20px;"></i> Weekly Routine</a>
+                <a href="#"><i class="fa-solid fa-bullseye" style="width: 20px;"></i> Goals</a>
+                <a href="#"><i class="fa-solid fa-chart-simple" style="width: 20px;"></i> Analytics</a>
+                <a href="#"><i class="fa-solid fa-gear" style="width: 20px;"></i> Settings</a>
+            </div>
+            
+            <div style="margin-top: auto; padding: 1rem;">
+                <div class="quote-box">
+                    "Discipline equals freedom."<br>— Jocko Willink
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <div class="cover-image"></div>
+            
+            <div class="page-header">
+                <div class="page-icon">🎯</div>
+                <h1 class="title" contenteditable="true">Agency Growth Sprint</h1>
+                
+                <div class="countdown-container">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="countdown">7d 00h 00m 00s</span>
+                </div>
+            </div>
+            
+            <div class="page-body">
+                <div class="callout warning">
+                    <div class="callout-icon">⚠️</div>
+                    <div class="callout-text">
+                        <strong>Consequence of Failure:</strong> If all mandatory tasks below are not checked off by the end of the 7-day countdown, you will face <span class="punishment">No phone for 24 hours</span>. Focus and execute.
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">Weekly Progress</span>
+                        <span class="progress-text" id="progress-text">0% Completed</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <i class="fa-solid fa-list-check"></i> To-Do List
+                </div>
+                
+                <div class="task-list" id="task-list">
+                    <!-- Tasks will be injected via Native JS -->
+                </div>
+                
+                <div class="add-task-container">
+                    <button class="add-btn-icon"><i class="fa-solid fa-plus"></i></button>
+                    <input type="text" id="new-task-input" placeholder="Click here to add a new task...">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Result -->
+    <div class="modal-overlay" id="result-modal">
+        <div class="modal">
+            <div class="modal-icon" id="modal-icon">⏳</div>
+            <h2 id="modal-title">Time's Up!</h2>
+            <p id="modal-message">You didn't complete all your tasks this week.</p>
+            <div class="modal-punishment" id="modal-punishment-box">
+                 Punishment: NO PHONE FOR 24 HOURS
+            </div>
+            <button id="reset-week-btn">Accept & Start Next Week</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
